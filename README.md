@@ -134,8 +134,6 @@ There is premake5 file there. So you can generate VS, XCode, etc. projects:
 
 # Practical usage
 
-I am using [cpp-generators](https://github.com/c-smile/cpp-generators) and the async::task (combined with libuv for I/O) intensenvly in my [Sciter Engine](https://sciter.com). 
-
-You can find [Sciter SDK](https://github.com/c-smile/sciter-sdk) on GitHub too. This allows me to keep Sciter small, fast and manageable.
+I am using [cpp-generators](https://github.com/c-smile/cpp-generators) and the async::task (combined with libuv for I/O) intensively in my [Sciter Engine](https://sciter.com). You can find [Sciter SDK](https://github.com/c-smile/sciter-sdk) on GitHub too. This allows me to keep Sciter small, fast and manageable.
 
 As of the robot pet project, read my [Refreshing AI basics …](https://terrainformatica.com/2018/10/10/refreshing-ai-basics/) article. 
