@@ -52,23 +52,25 @@ namespace async {
 
   public:
 
-    task() { init(); }
+    task() { restart(); }
 
     //|
     //| Restart, a.k.a. rewind 
     //|
     void restart() { __status = INIT; }
-    
+
+    //| each task may have its own init() with its own signature 
+    //| used by START/RUN_TASK() to pass parameters to initial state
     void init() {}
     
-    /*
-     * Check if async subroutine is done
-     */
+    //|
+    //| Check if async subroutine is done
+    //|
     bool is_done() const { return __status == DONE; }
 
-    /*
-     * resume a running async computation and check for completion
-     */
+    //|
+    //| resume a running async computation and check for completion
+    //|
     bool operator()() {
       if(is_done()) return false;
       __status = static_cast<TIMPL *>(this)->run();
@@ -77,7 +79,7 @@ namespace async {
   };
 
   //|
-  //|  task helper declaration  
+  //|  Task helper declaration, note it is CRTP thing, see: https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern
   //|
   #define TASK(NAME) class NAME : public async::task<NAME>
 
