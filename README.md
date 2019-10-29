@@ -1,5 +1,4 @@
-# async.hpp
-async.hpp - asynchronous, stackless coroutines for C++, single header implementation. 
+# async.hpp - asynchronous, stackless coroutines for C++
 
 Single header implementation of async/await concept - reformulation of my [cpp-generators](https://github.com/c-smile/cpp-generators) and [async.h](https://github.com/naasking/async.h) but for C++ this time.
 
