@@ -128,7 +128,15 @@ The whole robot's code is just a composition of such tasks, some of them run in 
 
 # Build samples in /code folder
 
-I am using premake5 there. So you can generate VS, XCode, etc. projects:
+There is premake5 file there. So you can generate VS, XCode, etc. projects:
 
 1. Download [premake5](https://premake.github.io/download.html)
 2. run `premake5.exe vs2015` in the /code folder to generate VS2015 project and workspace.
+
+# Practical usage
+
+I am using [cpp-generators](https://github.com/c-smile/cpp-generators) and the async::task (combined with libuv for I/O) intensenvly in my [Sciter Engine](https://sciter.com). 
+
+You can find [Sciter SDK](https://github.com/c-smile/sciter-sdk) on GitHub too. This allows me to keep Sciter small, fast and manageable.
+
+As of the robot pet project, read my [Refreshing AI basics …](https://terrainformatica.com/2018/10/10/refreshing-ai-basics/) article. 
