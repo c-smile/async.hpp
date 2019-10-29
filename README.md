@@ -118,10 +118,17 @@ public:
 
 ```
 
-The whole robot's code is just a composition of such tasks, some of them run in parallel, some one by one. There is no OS, no threads, just a `loop()` routine called by the processor. The async.hpp allows to implement parallelism and asynchronous execution in 8kb of RAM the device has on board.
+The whole robot's code is just a composition of such tasks, some of them run in parallel, some one by one. There is no OS, no threads, on the device just a `loop()` routine called by the processor. The async.hpp allows to implement parallelism and asynchronous execution in 8kb of RAM the device has on board.
 
 # Caveats
 
 1. You cannot use switch statements within an async subroutine - execution 
    state management is a switch itself.
 2. You cannot make blocking system calls. Either use poll() or completion I/O primitives.
+
+# Build samples in /code folder
+
+I am using premake5 there. So you can generate VS, XCode, etc. projects:
+
+1. Download [premake5](https://premake.github.io/download.html)
+2. run `premake5.exe vs2015` in the /code folder to generate VS2015 project and workspace.
