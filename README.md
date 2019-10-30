@@ -9,8 +9,7 @@ Here is MOVIE of async.hpp running on board of my [Arduino based test platform "
 # Features
 
 1. It's 100% pure, portable C++.
-2. It requires very little state (1 or 2 ints).
-3. It's not dependent on an OS. Can be used even without OS, e.g. on Arduino.
+2. It's not dependent on an OS. Can be used even without OS, e.g. on Arduino.
 
 # Basics
 
