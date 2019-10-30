@@ -2,6 +2,10 @@
 
 Single header implementation of async/await concept - reformulation of my [cpp-generators](https://github.com/c-smile/cpp-generators) and [async.h](https://github.com/naasking/async.h) but for C++ this time.
 
+Here is async.hpp running on board of my [Arduino based test platform "Vasilii"](https://terrainformatica.com/2018/10/10/refreshing-ai-basics/)
+
+[![async.hpp in action](https://img.youtube.com/vi/aQPYnlXV3ZY/maxresdefault.jpg)](https://youtu.be/aQPYnlXV3ZY)
+
 # Features
 
 1. It's 100% pure, portable C++.
