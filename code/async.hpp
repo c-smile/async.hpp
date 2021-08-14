@@ -30,6 +30,12 @@ namespace async {
     bool is_expired() { return clock_time() >= until; }
   };
 
+  class job {
+  public:
+    virtual bool is_done() const = 0;
+    virtual bool operator()() = 0;
+  };
+
 
   //|
   //| The task - core async class, represents async function with persistent state 
@@ -37,7 +43,7 @@ namespace async {
   //|
 
   template<class TIMPL> 
-  class task {
+  class task : public job {
   protected:
 
     // task status, contains either the below values or line number where the task is at the moment
@@ -66,12 +72,12 @@ namespace async {
     //|
     //| Check if async subroutine is done
     //|
-    bool is_done() const { return __status == DONE; }
+    virtual bool is_done() const { return __status == DONE; }
 
     //|
     //| resume a running async computation and check for completion
     //|
-    bool operator()() {
+    virtual bool operator()() {
       if(is_done()) return false;
       __status = static_cast<TIMPL *>(this)->run();
       return is_done();
@@ -161,6 +167,9 @@ namespace async {
   inline bool is_incomplete(timer& c) { return !c.is_expired(); }  
   inline bool is_incomplete(semaphore& c) { return c.is_incomplete(); }
   template<typename T> inline bool is_incomplete(task<T>& t) { t.operator()(); return !t.is_done(); }
+
+
+
 }
 
 #endif
